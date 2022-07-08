@@ -25,25 +25,19 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Uri ident = null;
         Button b1 = findViewById(R.id.botaoSelect);
         Button b2 = findViewById(R.id.botaoAbrir);
         FloatingActionButton b3 = findViewById(R.id.BotFlut);
-        BancoDados db = new BancoDados(this);
         b1.setOnClickListener(v -> {
             DialogFragment datePicker = new DatePickerFragment();
             datePicker.show(getSupportFragmentManager(), "date picker");
         });
-        b2.setOnClickListener(v -> abrirArquivo(ident));
+        b2.setOnClickListener(v -> abrirArquivo());
         b3.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), CriarPessoas.class);
             startActivity(intent);
         });
-        db.adicionarPessoa(new ModeloPessoas("Joao"));
-        Toast ps = Toast.makeText(MainActivity.this, "Pessoa salva!", Toast.LENGTH_LONG);
-        ps.show();
-        }
-
+    }
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -59,11 +53,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     // Requisita acesso ao txt
     private static final int PICK_TXT_FILE = 2;
 
-    private void abrirArquivo(Uri pickerInitialUri) {
+    private void abrirArquivo() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("application/txt");
-        intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri);
         startActivityForResult(intent, PICK_TXT_FILE);
     }
 }
