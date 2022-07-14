@@ -13,8 +13,8 @@ public class CriarPessoas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criarpessoas);
-        FloatingActionButton botCheck = findViewById(R.id.ChequeBot);
-        EditText CampoPessoa = findViewById(R.id.CampoPessoa);
+        FloatingActionButton botCheck = findViewById(R.id.ChequeBot2);
+        EditText CampoPessoa = findViewById(R.id.CampoPessoa2);
         CampoPessoa.setText("");
         botCheck.setOnClickListener(view -> {
             String NomeDigitado = CampoPessoa.getText().toString();

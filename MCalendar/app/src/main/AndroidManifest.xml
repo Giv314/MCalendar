@@ -14,12 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendaroneJava"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
-        <activity android:name=".Conversas"
+
+        <activity android:name=".ReceberConversas"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*"/>
                 <data android:mimeType="text/*" />
             </intent-filter>
             <intent-filter>
@@ -33,16 +36,25 @@
                 <data android:mimeType="text/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListaPessoas"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+
+
         <activity
-            android:name=".CriarPessoas"
-            android:exported="true" />
+            android:name=".ListaPessoas"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".SelecionarPessoa"
+            android:exported="true"/>
+
+        <activity
+            android:name=".MostraConversas"
+            android:exported="true"/>
+
+        <activity
+            android:name=".Conversas"
+            android:exported="true"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -51,6 +63,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

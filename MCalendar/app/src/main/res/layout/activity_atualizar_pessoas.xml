@@ -11,7 +11,7 @@
         android:layout_height="69dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/digitarNome"
+        android:hint="@string/digite_o_novo_nome_da_pessoa"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"

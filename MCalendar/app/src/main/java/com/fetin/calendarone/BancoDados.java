@@ -16,6 +16,7 @@ public class BancoDados extends SQLiteOpenHelper {
     private static final String TABELA_NOME = "tb_pessoa";
     private static final String COLUNA_NOME = "Nome";
     private static final String COLUNA_CODIGO = "Codigo";
+    private static final String COLUNA_MENSAGENS = "Mensagem";
 
     public BancoDados(Context context) {
 
@@ -25,7 +26,7 @@ public class BancoDados extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String QUERY_COLUNA = "CREATE TABLE " + TABELA_NOME + " ("
-                + COLUNA_CODIGO + " INTEGER PRIMARY KEY," + COLUNA_NOME + " TEXT)";
+                + COLUNA_CODIGO + " INTEGER PRIMARY KEY," + COLUNA_NOME + " TEXT, " + COLUNA_MENSAGENS + " TEXT)";
         db.execSQL(QUERY_COLUNA);
     }
 
@@ -44,11 +45,11 @@ public class BancoDados extends SQLiteOpenHelper {
 
     void DeletarPessoa(ModeloPessoas pessoa) {
         SQLiteDatabase db = this.getReadableDatabase();
-        db.delete(TABELA_NOME, COLUNA_NOME + " = ?", new String[]{String.valueOf(pessoa.getCodigo())});
+        db.delete(TABELA_NOME, COLUNA_NOME + " = ?", new String[]{pessoa.getNome()});
         db.close();
     }
 
-    ModeloPessoas selecionarPessoa(int codigo) {
+    /*ModeloPessoas selecionarPessoa(int codigo) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cur = db.query(TABELA_NOME, new String[]{COLUNA_CODIGO, COLUNA_NOME}, COLUNA_CODIGO +
                 " = ?", new String[]{String.valueOf(codigo)}, null, null, null, null);
@@ -58,6 +59,8 @@ public class BancoDados extends SQLiteOpenHelper {
         ModeloPessoas pessoa1 = new ModeloPessoas(Integer.parseInt(cur.getString(0)), String.valueOf(cur.getString(1)));
         return pessoa1;
     }
+
+     */
 
     void atualizarPessoas(ModeloPessoas pessoa) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -81,5 +84,12 @@ public class BancoDados extends SQLiteOpenHelper {
             } while(c.moveToNext());
         }
     return ListaPessoas;
+    }
+    void adicionarMensagem(ModeloPessoas pessoa) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUNA_MENSAGENS, pessoa.getNome());
+        db.insert(TABELA_NOME, null, values);
+        db.close();
     }
 }

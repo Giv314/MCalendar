@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_conversas.xml" value="0.33" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_atualizar_pessoas.xml" value="0.33" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_conversas.xml" value="0.22" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_criarpessoas.xml" value="0.25" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_listapessoas.xml" value="0.33" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_mostra_conversas.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_opcoes.xml" value="0.25" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_receber_conversas.xml" value="0.25" />
+        <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/activity_selecionar_pessoa.xml" value="0.17481884057971014" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/content_conversas.xml" value="0.17481884057971014" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/fragment_first.xml" value="0.17481884057971014" />
         <entry key="..\:/Users/aluno/AndroidStudioProjects/Calendaronejava/app/src/main/res/layout/fragment_second.xml" value="0.17481884057971014" />
